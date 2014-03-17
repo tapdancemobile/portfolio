@@ -26,6 +26,7 @@ gem 'bootstrap-will_paginate'
 gem 'bootstrap-sass'
 gem 'twitter-bootstrap-rails'
 gem "paperclip", "~> 4.1"
+gem "devise"
 
 group :doc do
   gem 'sdoc', '0.3.20', require: false
