@@ -1,0 +1,32 @@
+<% provide(:title, 'portfolio') %>
+
+ <div id="content">
+
+	<div id="portfolio">
+			  
+		<div class="portfolio-grid" id="columns">
+		
+			<ul>
+
+			<% @projects.each do |project| %>	
+				<li class="col3 web">
+					<h2><%= link_to project.title, project_path(project) %></h2>
+					<ul class="gallery clearfix">
+						<% project.pictures.each do |picture| %>
+						<li>
+
+							<%= link_to image_tag(picture.image_url(:thumb), :alt => picture.title ,:class => "img-polaroid", :height => "60"), picture.image_url, :rel => "prettyPhoto[pp_gal]" %>
+
+						</li>
+						<% end %>
+					</ul>
+				</li>
+			<% end %>	
+				
+			</ul><!--END ul-->
+		
+		</div><!--END portfolio-wrap-->
+	
+	</div><!--END portfolio ID-->
+	
+</div><!--END content--> 

@@ -7,8 +7,24 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+<%= render 'layouts/header'%>
+<%= yield %> 
+<%= render 'layouts/footer'%>
+<%= debug(params) if Rails.env.development? %>
 </body>
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(function(){
+        $("a[rel^='prettyPhoto']").prettyPhoto({
+            animationSpeed: 'normal', /* fast/slow/normal */
+            padding: 40, /* padding for each side of the picture */
+            opacity: 0.35, /* Value betwee 0 and 1 */
+            showTitle: false, /* true/false */
+            allowresize: true, /* true/false */
+            counter_separator_label: '/', /* The separator for the gallery counter 1 "of" 2 */
+            theme: 'light_rounded' /* light_rounded / dark_rounded / light_square / dark_square */
+        });
+    });
+
+
+</script>
 </html>

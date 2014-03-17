@@ -1,0 +1,34 @@
+
+<div id="wrapper">
+
+<div id="header">
+
+<div class="header">
+	
+	<div id="logo">
+		<%= link_to image_tag("tadamobile_logo.png", title: "tadamobile_logo"), root_path %>
+	</div><!--END logo-->	
+		
+<div id="smoothmenu" class="ddsmoothmenu">
+	
+	<ul>	
+		<li class="<%= "current" if yield(:title) == "home" %>">
+			<%= link_to "Home",    root_path %>
+		</li>
+		<li class="<%= "current" if yield(:title) == "about" %>">
+			<%= link_to "About",    about_path %>
+		</li>
+		<li class="<%= "current" if yield(:title) == "portfolio" %>">
+			<%= link_to "Portfolio",    portfolio_path %>
+		</li>
+		<li class="<%= "current" if yield(:title) == "contact" %>">
+			<%= link_to "Contact",    contact_path %>
+			 </li>
+		
+	</ul><!--END ul-->
+	
+</div><!--END jqueryslidemenu-->
+		
+</div><!--END header class-->
+
+</div><!--END header id-->
