@@ -15,7 +15,7 @@
 						<% project.pictures.each do |picture| %>
 						<li>
 
-							<%= link_to image_tag(picture.image_url(:thumb), :alt => picture.title ,:class => "img-polaroid", :height => "60"), picture.image_url, :rel => "prettyPhoto[pp_gal]" %>
+							<%= link_to image_tag(picture.image.url(:thumb), :alt => picture.title ,:class => "img-polaroid", :height => "60"), picture.image.url, :rel => "prettyPhoto[pp_gal]" %>
 
 						</li>
 						<% end %>

@@ -24,6 +24,8 @@ gem 'jbuilder', '1.0.2'
 gem 'prettyphoto-rails'
 gem 'bootstrap-will_paginate'
 gem 'bootstrap-sass'
+gem 'twitter-bootstrap-rails'
+gem "paperclip", "~> 4.1"
 
 group :doc do
   gem 'sdoc', '0.3.20', require: false

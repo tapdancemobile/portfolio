@@ -1,0 +1,17 @@
+<% provide(:title, @picture.title) %>
+<h1><%= @picture.title%></h1>
+<div class = "row">
+	<div class = "span6 offset3">
+
+<%= image_tag @picture.image.url%>
+
+<%= form_for @picture, :html => { :multipart => true } do |f| %>
+
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+
+	<%= f.submit "Save image", class: "btn btn-large btn-primary"%>
+
+<% end %>
+</div>
+</div>

@@ -1,0 +1,6 @@
+<li>
+	<h3> <%= project.title %> </h3>
+	  <%= link_to "View", project_path(project) %>
+	| <%= link_to "Edit", edit_project_path(project) %>
+    | <%= link_to "Delete", project, method: :delete %>
+</li>

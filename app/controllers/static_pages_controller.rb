@@ -1,4 +1,16 @@
 class StaticPagesController < ApplicationController
-  def home
+  
+def home
   end
+
+  def about
+  end
+
+  def portfolio
+  	@projects = Project.all
+  end
+
+  def contact
+  end
+  
 end
