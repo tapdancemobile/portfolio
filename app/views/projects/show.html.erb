@@ -28,6 +28,9 @@
 	</div>
 
 			<h2>About the project</h2>
-			<p><%= @project.description %></p>						
+			<p><%= @project.description %></p>	
+	<% if user_signed_in? %>
+		<%= link_to "Edit", edit_project_path(@project) %>
+	<% end %>					
 							
 	</div><!--END inner-content-->

@@ -15,4 +15,5 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require prettyphoto-rails
+//= require bootstrap
 //= require_tree .

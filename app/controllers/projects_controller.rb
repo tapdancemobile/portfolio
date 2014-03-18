@@ -1,5 +1,7 @@
 class ProjectsController < ApplicationController
   
+  before_filter :authenticate_user!, except: [:show]
+
   def new
   	@project = Project.new
   end
@@ -20,7 +22,7 @@ class ProjectsController < ApplicationController
 
   def update
   	@project = Project.find(params[:id])
-  	@project.update_attributes(params[:project])
+  	@project.update_attributes(app_params)
   	redirect_to @project
   end
 
