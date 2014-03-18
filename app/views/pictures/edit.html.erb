@@ -5,10 +5,11 @@
 
 <div class = "row">
 	
-
 <%= image_tag @picture.image.url%>
 
 <%= form_for @picture, :html => { :multipart => true } do |f| %>
+
+<%= render 'layouts/error_messages', object: f.object %>
 
 	<%= f.label :title %>
 	<%= f.text_field :title %>

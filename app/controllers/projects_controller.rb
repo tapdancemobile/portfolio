@@ -12,8 +12,14 @@ class ProjectsController < ApplicationController
 
   def destroy
     @project = Project.find(params[:id])
-    @project.destroy
-    redirect_to projects_path
+    
+    if(@project.destroy)
+      flash[:success] = "Your project has been deleted"
+      redirect_to portfolio_path
+    else
+      flash[:error] = "Unable to delete your project"
+      redirect_to @project
+    end
   end
 
   def edit
@@ -22,18 +28,25 @@ class ProjectsController < ApplicationController
 
   def update
   	@project = Project.find(params[:id])
-  	@project.update_attributes(app_params)
-  	redirect_to @project
+
+  	if(@project.update_attributes(app_params))
+      flash[:success] = "Your project has been updated"
+  	  redirect_to portfolio_path
+    else
+      flash[:error] = "Unable to update your project"
+      redirect_to edit_project_path(@project)
+    end
   end
 
   def create
   	@project = Project.new(app_params)
-  	if @project.save
-  		flash[:success] = "Project Created"
-  		redirect_to @project
-  	else
-  		render 'new'
-	 end
+  	if(@project.save)
+      flash[:success] = "Your project has been created"
+      redirect_to portfolio_path
+    else
+      flash[:error] = "Unable to create your project"
+      render 'new'
+    end
   end
 
   private

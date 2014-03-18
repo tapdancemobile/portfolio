@@ -7,4 +7,6 @@ class Project < ActiveRecord::Base
 
 	validates :description, presence: true, length: { maximum: 512} 
 
+	accepts_nested_attributes_for :pictures , :reject_if => proc { |attributes| attributes['image'].blank? }, :allow_destroy => true
+	
 end

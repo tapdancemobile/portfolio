@@ -899,6 +899,9 @@ ul.tabs li.active a {
 	width: 465px;
 }
 .col3 {
+	height: 180px;
+    min-height: 180px;
+    overflow:auto;
 	width: 300px
 }
 .portfolio-grid ul li a.hide {

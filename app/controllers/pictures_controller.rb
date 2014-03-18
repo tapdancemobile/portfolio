@@ -9,7 +9,8 @@ class PicturesController < ApplicationController
 	def update
 	  	@picture = Picture.find(params[:id])
 	  	@picture.update_attributes(app_params)
-	  	redirect_to @picture
+      @project = Project.find(params[:project_id])
+	  	redirect_to @project
   	end
 
   	def edit
@@ -19,16 +20,16 @@ class PicturesController < ApplicationController
 
   	def new
   		@picture = Picture.new
-        @picture.project_id = params[:project_id]
+      @picture.project_id = params[:project_id]
   	end
 
   	def create
 
-    project = Project.find(params[:picture][:project_id])
-  	@picture = project.pictures.create(app_params)
+    @project = Project.find(params[:picture][:project_id])
+  	@picture = @project.pictures.create(app_params)
   	if @picture.save
   		flash[:success] = "Picture Created"
-  		redirect_to @picture
+  		redirect_to @project
   	else
   		render 'new'
 	 end

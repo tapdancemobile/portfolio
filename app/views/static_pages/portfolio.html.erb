@@ -11,11 +11,12 @@
 			<% @projects.each do |project| %>	
 				<li class="col3 web">
 					<h2><%= link_to project.title, project_path(project) %></h2>
-					<ul class="gallery clearfix">
+					<ul class="gallery">
+
 						<% project.pictures.each do |picture| %>
 						<li>
 
-							<%= link_to image_tag(picture.image.url(:thumb), :alt => picture.title ,:class => "img-polaroid", :height => "60"), picture.image.url, :rel => "prettyPhoto[pp_gal]" %>
+							<%= link_to image_tag(picture.image.url, :alt => picture.title ,:class => "img-polaroid", :size => "50x50"), picture.image.url, :rel => "prettyPhoto[pp_gal]" %>
 
 						</li>
 						<% end %>
@@ -28,9 +29,12 @@
 		</div><!--END portfolio-wrap-->
 	
 	</div><!--END portfolio ID-->
-	
-	<% if user_signed_in? %>
-		<%= link_to "New Project", new_project_path %>
-	<% end %>
+
 
 </div><!--END content--> 
+
+<div>
+<% if user_signed_in? %>
+		<%= link_to "New Project", new_project_path %>
+	<% end %>
+	</div>
