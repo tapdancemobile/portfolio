@@ -1,12 +1,13 @@
 Portfolio::Application.routes.draw do
   
  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
-  get "static_pages/home"
+
 
   resources :projects
   resources :pictures
 
   root :to => 'static_pages#home'
+  get '/home' , to: 'static_pages#home' 
   get '/about' , to: 'static_pages#about' 
   get '/portfolio' , to: 'static_pages#portfolio'
   get '/contact' , to: 'static_pages#contact'
